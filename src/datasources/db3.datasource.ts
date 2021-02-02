@@ -2,10 +2,10 @@ import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
 import {juggler} from '@loopback/repository';
 
 const config = {
-  name: 'db.abc',
+  name: 'db3',
   connector: 'memory',
   localStorage: '',
-  file: 'mydata.json',
+  file: ''
 };
 
 // Observe application's life cycle to disconnect the datasource when
@@ -15,11 +15,11 @@ const config = {
 @lifeCycleObserver('datasource')
 export class Db3DataSource extends juggler.DataSource
   implements LifeCycleObserver {
-  static dataSourceName = 'db.abc';
+  static dataSourceName = 'db3';
   static readonly defaultConfig = config;
 
   constructor(
-    @inject('datasources.config.db1', {optional: true})
+    @inject('datasources.config.db3', {optional: true})
     dsConfig: object = config,
   ) {
     super(dsConfig);

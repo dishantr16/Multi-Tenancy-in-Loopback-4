@@ -1,0 +1,13 @@
+{
+  "ids": {
+    "User": 5
+  },
+  "models": {
+    "User": {
+      "1": "{\"tenantId\":\"\",\"name\":\"Name1\",\"id\":\"1\"}",
+      "2": "{\"tenantId\":\"\",\"name\":\"string\",\"id\":\"2\"}",
+      "3": "{\"tenantId\":\"\",\"name\":\"One\",\"id\":\"3\"}",
+      "4": "{\"tenantId\":\"\",\"name\":\"four\",\"id\":\"4\"}"
+    }
+  }
+}

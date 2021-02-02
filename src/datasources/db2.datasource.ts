@@ -4,6 +4,8 @@ import {juggler} from '@loopback/repository';
 const config = {
   name: 'db.xyz',
   connector: 'memory',
+  localStorage: '',
+  file: 'mydata.json',
 };
 
 @lifeCycleObserver('datasource')

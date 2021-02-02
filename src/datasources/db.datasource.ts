@@ -5,7 +5,7 @@ const config = {
   name: 'db',
   connector: 'memory',
   localStorage: '',
-  file: '',
+  file: 'mydata.json',
 };
 
 @lifeCycleObserver('datasource')
