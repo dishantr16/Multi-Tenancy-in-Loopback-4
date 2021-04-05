@@ -24,7 +24,7 @@ import {UserRepository} from '../repositories';
 export class UserController {
   constructor(
     @repository(UserRepository)
-    public userRepository : UserRepository,
+    public userRepository: UserRepository,
 
     @inject(MultiTenancyBindings.CURRENT_TENANT, {optional: true})
     private tenant?: Tenant,
@@ -52,9 +52,9 @@ export class UserController {
     user: Omit<User, 'id'>,
   ): Promise<User> {
     // Inject the tenant id for creation
-    if(this.tenant?.id != null){
+    if (this.tenant?.id != null) {
       user.tenantId = this.tenant?.id;
-    }else{
+    } else {
       user.tenantId = '';
     }
     return this.userRepository.create(user);
@@ -68,9 +68,7 @@ export class UserController {
       },
     },
   })
-  async count(
-    @param.where(User) where?: Where<User>,
-  ): Promise<Count> {
+  async count(@param.where(User) where?: Where<User>): Promise<Count> {
     return this.userRepository.count(where);
   }
 
@@ -89,9 +87,7 @@ export class UserController {
       },
     },
   })
-  async find(
-    @param.filter(User) filter?: Filter<User>,
-  ): Promise<User[]> {
+  async find(@param.filter(User) filter?: Filter<User>): Promise<User[]> {
     return this.userRepository.find(filter);
   }
 
@@ -131,7 +127,7 @@ export class UserController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(User, {exclude: 'where'}) filter?: FilterExcludingWhere<User>
+    @param.filter(User, {exclude: 'where'}) filter?: FilterExcludingWhere<User>,
   ): Promise<User> {
     return this.userRepository.findById(id, filter);
   }

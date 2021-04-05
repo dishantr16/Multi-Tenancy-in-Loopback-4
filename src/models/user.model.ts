@@ -20,7 +20,6 @@ export class User extends Entity {
   })
   name: string;
 
-
   constructor(data?: Partial<User>) {
     super(data);
   }

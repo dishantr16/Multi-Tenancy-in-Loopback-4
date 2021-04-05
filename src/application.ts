@@ -12,7 +12,6 @@ import {MySequence} from './sequence';
 
 import {MultiTenancyComponent} from './multi-tenancy/component';
 
-
 export {ApplicationConfig};
 
 export class Lb4MultiTenantApplication extends BootMixin(
@@ -32,7 +31,6 @@ export class Lb4MultiTenantApplication extends BootMixin(
       path: '/explorer',
     });
     this.component(RestExplorerComponent);
-
 
     /* Lb4MultiTenantApplication.configure(MultiTenancyBindings.MIDDLEWARE)
       .to({strategyNames: ['jwt', 'header', 'query']}); */
